@@ -43,12 +43,16 @@ and run the following command to build the docker image for the orders service:
 ```bash
 docker build -t orders:2.0.0 . 
 minikube load docker-image orders:2.0.0
+kubectl create deployment orders --image=orders:2.0.0
+kubectl expose deployment orders --type=LoadBalancer --port=80 --target-port=8081
 ```
 do the same for the products services\
 cd into `~/monolith-to-microservices/microservices/src/products`
 ```bash
 docker build -t products:1.0.0 .
 minikube load docker-image products:1.0.0
+kubectl create deployment products --image=products:1.0.0
+kubectl expose deployment products --type=LoadBalancer --port=80 --target-port=8082
 ```
 
 ## Now update the api endpoints in the frontend service insde in the react-app
