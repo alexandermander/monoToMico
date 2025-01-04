@@ -76,8 +76,10 @@ REACT_APP_PRODUCTS_URL=http://<EXTERNAL_IP>/api/products
 npm run build:monolith
 ```
 
-## Then cd into the ~/monolith-to-microservices/monolith
-
+## Now set up the react-app deployment and service
+```bash
+cd ~/monolith-to-microservices/react-app
+```
 and run the following command to build the docker image for the react-app
 ```bash
 docker build -t monolith:1.0.0 .
